@@ -38,3 +38,41 @@ func GetPredictData(ctx context.Context, dealRegion, dealDate string, pageNum, p
 	}
 	return resp.PostPredictData, nil
 }
+func GetRawData(ctx context.Context, tag, source string, pageNum, pageSize int32) (*post_data_manage.RawDataPage, error) {
+	req := &post_data_manage.GetRawDataRequest{
+		Source:   source,
+		Id:       tag,
+		PageSize: pageSize,
+		PageNum:  pageNum,
+	}
+	resp, err := data_manage_client.GetRawData(ctx, req)
+	if err != nil {
+		return nil, err
+	} else if resp.Status != 0 {
+		return nil, errors.New(resp.Message)
+	}
+	return resp.Data, nil
+}
+func GetRawDataTree(ctx context.Context) (*post_data_manage.RawDataTree, error) {
+	req := &post_data_manage.GetRawDataTreeRequest{}
+	resp, err := data_manage_client.GetRawDataTree(ctx, req)
+	if err != nil {
+		return nil, err
+	} else if resp.Status != 0 {
+		return nil, errors.New(resp.Message)
+	}
+	return resp.Tree, nil
+}
+
+func GetTaskInfo(ctx context.Context, taskId string) (*post_data_manage.PredictTaskStatus, error) {
+	req := &post_data_manage.GetPostPredictTaskStatusRequest{
+		TaskId: taskId,
+	}
+	resp, err := data_manage_client.GetPostPredictTaskStatus(ctx, req)
+	if err != nil {
+		return nil, err
+	} else if resp.Status != 0 {
+		return nil, errors.New(resp.Message)
+	}
+	return resp.PredictTaskStatus, nil
+}

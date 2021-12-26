@@ -24,9 +24,15 @@ func main() {
 	// 预测模型
 	r.PUT("/model/:modelName/:modelVersion", handler.PredictHandler)
 	// 上传数据
-	r.PUT("/dataq/collect", handler.UploadDealHanlder)
+	r.PUT("/data/collect", handler.UploadDealHanlder)
 	// 获取预测顺序
 	r.POST("/data/predict", handler.GetPredictDealHandler)
-	//
+	// 获取原始数据
+	r.POST("/data/raw/", handler.GetRawDealHandler)
+	// 获取原始数据目录
+	r.GET("/data/raw/tree/", handler.GetRawDataTreeHandler)
+
+	r.GET("/task/gen/:taskId", handler.GetGenTaskInfoHandler)
+
 	r.Run("0.0.0.0:7675") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }

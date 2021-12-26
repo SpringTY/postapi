@@ -1,10 +1,8 @@
 cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 cloud.google.com/go v0.34.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/SpringTY/postrpc v0.0.0-20211216083358-f10d0dea6261 h1:vC6D78B/DUo+/naWGWlx1fmf/1Wcej5tEHdlk0X12ps=
-github.com/SpringTY/postrpc v0.0.0-20211216083358-f10d0dea6261/go.mod h1:h/zDhlFic0+KXg9r66tRdQkVGnY1xEnaeZGXsTJuois=
-github.com/SpringTY/postrpc v0.0.0-20211217082513-cfe0a3f81497 h1:pTY7HHjbHeTDnXnTwEBJjajkq0ax+nnBXbWIOzE4YhM=
-github.com/SpringTY/postrpc v0.0.0-20211217082513-cfe0a3f81497/go.mod h1:h/zDhlFic0+KXg9r66tRdQkVGnY1xEnaeZGXsTJuois=
+github.com/SpringTY/postrpc v0.0.0-20211224072158-6cbbd0314530 h1:kpZstUGU0yytsJM3w/cV509ESmivDWJ2EARMP7wkai4=
+github.com/SpringTY/postrpc v0.0.0-20211224072158-6cbbd0314530/go.mod h1:h/zDhlFic0+KXg9r66tRdQkVGnY1xEnaeZGXsTJuois=
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/cespare/xxhash/v2 v2.1.1/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
