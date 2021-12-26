@@ -34,5 +34,6 @@ func main() {
 
 	r.GET("/task/gen/:taskId", handler.GetGenTaskInfoHandler)
 
+	r.POST("/task/gen/:tag", handler.GenPostPredictDataHandler)
 	r.Run("0.0.0.0:7675") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }

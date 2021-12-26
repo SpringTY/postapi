@@ -76,3 +76,16 @@ func GetTaskInfo(ctx context.Context, taskId string) (*post_data_manage.PredictT
 	}
 	return resp.PredictTaskStatus, nil
 }
+
+func GeneratePostPredictData(ctx context.Context, tag string) (string, error) {
+	req := &post_data_manage.GeneratePostPredictDataRequest{
+		Tag: tag,
+	}
+	resp, err := data_manage_client.GeneratePostPredictData(ctx, req)
+	if err != nil {
+		return "nil", err
+	} else if resp.Status != 0 {
+		return "nil", errors.New(resp.Message)
+	}
+	return resp.TaskId, nil
+}
