@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	model_manage_address = "211.71.76.189:50053"
+	model_manage_address = "vm:50053"
 )
 
 var model_manage_client post_model_manage.PostModelManageClient
@@ -34,7 +34,18 @@ func GetModelStatus(ctx context.Context) (*post_model_manage.GetModelStatesData,
 	}
 	return resp.Data, nil
 }
-
+func RegisterModel(ctx context.Context, modelUrl string) (string, error) {
+	req := &post_model_manage.RegisterModelRequest{
+		Url: modelUrl,
+	}
+	resp, err := model_manage_client.RegisterModel(ctx, req)
+	if err != nil {
+		return "", err
+	} else if resp.Status != 0 {
+		return "", errors.New(resp.Message)
+	}
+	return resp.Message, nil
+}
 func RemoveModel(ctx context.Context, modelName, modelVersion string) error {
 	req := &post_model_manage.RemoveModelRequest{
 		ModelIdentity: &post_model_manage.ModelIdentity{

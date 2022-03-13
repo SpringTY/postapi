@@ -3,7 +3,7 @@ module postapi
 go 1.17
 
 require (
-	github.com/SpringTY/postrpc v0.0.0-20211224072158-6cbbd0314530
+	github.com/SpringTY/postrpc v0.0.0-20220313124612-bada0faa7b22
 	github.com/gin-gonic/gin v1.7.7
 	github.com/google/uuid v1.3.0
 	github.com/sirupsen/logrus v1.8.1

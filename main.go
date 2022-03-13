@@ -17,6 +17,8 @@ func main() {
 	})
 	// model manage 相关
 	r.GET("/model/states", handler.GetModelStatesHandler)
+	// model manage 相关
+	r.POST("/model/register", handler.RegisterModelHandler)
 	// remove model 卸载模型
 	r.DELETE("/model/:modelName/:modelVersion", handler.RemoveModelHandler)
 	// update model 更新模型
@@ -31,9 +33,9 @@ func main() {
 	r.POST("/data/raw/", handler.GetRawDealHandler)
 	// 获取原始数据目录
 	r.GET("/data/raw/tree/", handler.GetRawDataTreeHandler)
-
+	// 获取生成任务的情况
 	r.GET("/task/gen/:taskId", handler.GetGenTaskInfoHandler)
-
+	// 生成数据任务
 	r.POST("/task/gen/:tag", handler.GenPostPredictDataHandler)
 	r.Run("0.0.0.0:7675") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
